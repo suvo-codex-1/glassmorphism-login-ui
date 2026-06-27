@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="page.css" />
+</head>
+<body>
+
+  <!-- Animated gold orbs (mimic Image 1 background) -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+  <div class="orb orb-5"></div>
+
+  <!-- Glassmorphism card -->
+  <div class="card" id="card">
+
+    <!-- Tab switcher -->
+    <div class="tabs">
+      <button class="tab active" id="tab-signin" data-tab="signin">Sign In</button>
+      <button class="tab" id="tab-signup" data-tab="signup">Sign Up</button>
+    </div>
+
+    <!-- ── SIGN IN PANEL ── -->
+    <div class="panel active" id="panel-signin">
+      <h1 class="heading">Welcome back</h1>
+      <p class="sub">Sign in to continue</p>
+
+      <div class="field">
+        <span class="icon">&#9786;</span>
+        <input type="text" id="signin-username" placeholder="Username" autocomplete="username" />
+      </div>
+
+      <div class="field">
+        <span class="icon">&#128274;</span>
+        <input type="password" id="signin-password" placeholder="Password" autocomplete="current-password" />
+        <button class="toggle-pw" data-target="signin-password" aria-label="Show password">&#128065;</button>
+      </div>
+
+      <div class="row-between">
+        <label class="remember">
+          <input type="checkbox" id="remember" />
+          <span>Remember me</span>
+        </label>
+        <a href="#" class="forgot" id="forgot-link">Forgot Password?</a>
+      </div>
+
+      <button class="btn-primary" id="signin-btn">Sign In</button>
+
+      <div class="divider"><span>OR</span></div>
+
+      <button class="btn-outline" id="goto-signup">Sign Up</button>
+
+      <p class="bottom-text">Don't have an account? <a href="#" id="switch-signup">Sign Up</a></p>
+    </div>
+
+    <!-- ── SIGN UP PANEL ── -->
+    <div class="panel" id="panel-signup">
+      <h1 class="heading">Create account</h1>
+      <p class="sub">Join us today</p>
+
+      <div class="field">
+        <span class="icon">&#9786;</span>
+        <input type="text" id="signup-name" placeholder="Full Name" autocomplete="name" />
+      </div>
+
+      <div class="field">
+        <span class="icon">&#9993;</span>
+        <input type="email" id="signup-email" placeholder="Email" autocomplete="email" />
+      </div>
+
+      <div class="field">
+        <span class="icon">&#128274;</span>
+        <input type="password" id="signup-password" placeholder="Password" autocomplete="new-password" />
+        <button class="toggle-pw" data-target="signup-password" aria-label="Show password">&#128065;</button>
+      </div>
+
+      <!-- Password strength bar -->
+      <div class="strength-wrap">
+        <div class="strength-bar" id="strength-bar"></div>
+      </div>
+      <p class="strength-label" id="strength-label"></p>
+
+      <div class="field">
+        <span class="icon">&#128274;</span>
+        <input type="password" id="signup-confirm" placeholder="Confirm Password" autocomplete="new-password" />
+      </div>
+
+      <button class="btn-primary" id="signup-btn">Create Account</button>
+
+      <div class="divider"><span>OR</span></div>
+
+      <button class="btn-outline" id="goto-signin">Sign In</button>
+
+      <p class="bottom-text">Already have an account? <a href="#" id="switch-signin">Sign In</a></p>
+    </div>
+
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Forgot password modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <h2>Reset Password</h2>
+      <p>Enter your email and we'll send a reset link.</p>
+      <div class="field">
+        <span class="icon">&#9993;</span>
+        <input type="email" id="reset-email" placeholder="Email address" />
+      </div>
+      <div class="modal-actions">
+        <button class="btn-outline" id="modal-cancel">Cancel</button>
+        <button class="btn-primary" id="modal-send">Send Link</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="page.js"></script>
+</body>
+</html>
